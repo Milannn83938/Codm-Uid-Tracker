@@ -110,7 +110,7 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:0 20px
 .nav-tag{font-size:10px;background:var(--blue-dim);color:var(--blue);padding:2px 8px;border-radius:20px;margin-left:8px;font-weight:500}
 .container{max-width:700px;margin:0 auto;padding:24px 16px}
 .tabs{display:flex;gap:2px;background:var(--bg2);padding:3px;border-radius:var(--rs);margin-bottom:20px;border:1px solid var(--border)}
-.tab{flex:1;text-align:center;padding:7px;font-size:13px;border-radius:4px;cursor:pointer;border:none;background:none;color:var(--text2);font-family:'Inter',sans-serif;transition:all .15s}
+.tab{flex:1;text-align:center;padding:10px 4px;font-size:13px;border-radius:4px;cursor:pointer;border:none;background:none;color:var(--text2);font-family:'Inter',sans-serif;transition:all .15s;touch-action:manipulation;-webkit-tap-highlight-color:transparent;user-select:none}
 .tab:hover{color:var(--text)}
 .tab.on{background:var(--bg3);color:var(--text);font-weight:500;border:1px solid var(--border2)}
 .search-box{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);padding:14px;margin-bottom:18px}
@@ -190,10 +190,10 @@ input:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(59,130,246,.1)}
 </nav>
 <div class="container">
   <div class="tabs">
-    <button class="tab on" onclick="goTab('search',this)">🔍 Search</button>
-    <button class="tab" onclick="goTab('log',this)">➕ Log UID</button>
-    <button class="tab" onclick="goTab('recent',this)">🕐 Recent</button>
-    <button class="tab" onclick="goTab('watchlist',this)">🔔 Watchlist</button>
+    <button class="tab on" onclick="goTab('search',this)">Search</button>
+    <button class="tab" onclick="goTab('log',this)">Log UID</button>
+    <button class="tab" onclick="goTab('recent',this)">Recent</button>
+    <button class="tab" onclick="goTab('watchlist',this)">Watchlist</button>
   </div>
 
   <!-- SEARCH -->
@@ -213,7 +213,7 @@ input:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(59,130,246,.1)}
           <span class="chip">📋 Name history</span>
           <span class="chip">🎭 Streamer mode</span>
           <span class="chip">🟢 Last activity</span>
-          <span class="chip">🔔 Watchlist</span>
+          <span class="chip">Watchlist</span>
           <span class="chip">🌍 Global server</span>
         </div>
       </div>
