@@ -190,10 +190,10 @@ input:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(59,130,246,.1)}
 </nav>
 <div class="container">
   <div class="tabs">
-    <button class="tab on" onclick="goTab('search',this)">Search</button>
-    <button class="tab" onclick="goTab('log',this)">Log UID</button>
-    <button class="tab" onclick="goTab('recent',this)">Recent</button>
-    <button class="tab" onclick="goTab('watchlist',this)">Watchlist</button>
+    <button class="tab on" id="t-search" ontouchend="goTab('search',this)" onclick="goTab('search',this)">Search</button>
+    <button class="tab" id="t-log" ontouchend="goTab('log',this)" onclick="goTab('log',this)">Log UID</button>
+    <button class="tab" id="t-recent" ontouchend="goTab('recent',this)" onclick="goTab('recent',this)">Recent</button>
+    <button class="tab" id="t-watchlist" ontouchend="goTab('watchlist',this)" onclick="goTab('watchlist',this)">Watchlist</button>
   </div>
 
   <!-- SEARCH -->
@@ -274,6 +274,9 @@ input:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(59,130,246,.1)}
 let wl = JSON.parse(localStorage.getItem('tuid_wl')||'[]');
 
 function goTab(t,btn){
+  if(window._tabLock) return;
+  window._tabLock = true;
+  setTimeout(()=>window._tabLock=false, 300);
   ['search','log','recent','watchlist'].forEach(id=>{
     document.getElementById('tab-'+id).style.display=id===t?'':'none';
   });
